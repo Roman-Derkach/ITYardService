@@ -30,7 +30,43 @@ namespace ITYardService
             _hashingPassword = "";
             for(int i = 0; i < _password.Length; i++)
             {
-                mass[i] =(char)((int)_password[i] + (int)_username[i % _username.Length]);
+                char ch = _password[i];
+                if (Char.IsLower(ch))
+                {
+                    if (ch == 'z')
+                    {
+                        ch = 'a';
+                    }
+                    else
+                    {
+                        ch = (char)((int)ch + 1);
+                    }
+                }
+                else
+                if (Char.IsNumber(ch))
+                {
+                    if (ch == '9')
+                    {
+                        ch = '0';
+                    }
+                    else
+                    {
+                        ch = (char)((int)ch + 1);
+                    }
+                }
+                else
+                if (Char.IsUpper(ch))
+                {
+                    if (ch == 'Z')
+                    {
+                        ch = 'A';
+                    }
+                    else
+                    {
+                        ch = (char)((int)ch + 1);
+                    }
+                }
+                mass[i] = ch;
             }
             _hashingPassword = new string(mass);
         }
@@ -49,11 +85,47 @@ namespace ITYardService
         public string DecryptPassword()
         {
             char[] mass = new char[_password.Length];
-            for(int i = 0; i < _password.Length; i++)
+            
+            for (int i = 0; i < _password.Length; i++)
             {
-                mass[i] = (char)((int)_hashingPassword[i] - (int)_username[i % _username.Length]);
+                char ch = _password[i];
+                if (Char.IsLower(ch))
+                {
+                    if (ch == 'a')
+                    {
+                        ch = 'z';
+                    }
+                    else
+                    {
+                        ch = (char)((int)ch - 1);
+                    }
+                }
+                else
+                 if (Char.IsNumber(ch))
+                {
+                    if (ch == '0')
+                    {
+                        ch = '9';
+                    }
+                    else
+                    {
+                        ch = (char)((int)ch - 1);
+                    }
+                }
+                else
+            if (Char.IsUpper(ch))
+                {
+                    if (ch == 'A')
+                    {
+                        ch = 'Z';
+                    }
+                    else
+                    {
+                        ch = (char)((int)ch - 1);
+                    }
+                }
+                mass[i] = ch;
             }
-
             return new string(mass);
         }
 
