@@ -41,12 +41,9 @@ namespace ITYardService
             return _users.Remove(id);
         }
 
-        public void DisplayUserInfo()
+        public void DisplayUserInfo(Guid id)
         {
-            foreach (var user in _users)
-            {
-                Console.WriteLine($"Username - {user.Value._username}, decrypt password - {user.Value._hashingPassword}");
-            }
+          Console.WriteLine($"Username - {_users[id]._username}, decrypt password - {_users[id]._hashingPassword}");
         }
 
     }

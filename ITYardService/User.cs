@@ -26,12 +26,13 @@ namespace ITYardService
 
         public void EncryptPassword()
         {
+           
             char[] mass = new char[_password.Length];
             _hashingPassword = "";
             for(int i = 0; i < _password.Length; i++)
             {
                 char ch = _password[i];
-                if (Char.IsLower(ch))
+                if (Char.IsLower(ch)) //if symbol on password is lowercase then him replace next symbol in alphabet (z->a)
                 {
                     if (ch == 'z')
                     {
@@ -43,7 +44,7 @@ namespace ITYardService
                     }
                 }
                 else
-                if (Char.IsNumber(ch))
+                if (Char.IsNumber(ch)) //if symbol on password is digit then him replace next digit (9->0)
                 {
                     if (ch == '9')
                     {
@@ -55,7 +56,7 @@ namespace ITYardService
                     }
                 }
                 else
-                if (Char.IsUpper(ch))
+                if (Char.IsUpper(ch)) //if symbol on password is uppercase then him replace next symbol in alphabet (Z->A)
                 {
                     if (ch == 'Z')
                     {
