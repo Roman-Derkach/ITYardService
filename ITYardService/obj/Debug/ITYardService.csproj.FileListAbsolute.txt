@@ -1,0 +1,7 @@
+C:\Users\Roman\Documents\c# courses\ITYardService\ITYardService\bin\Debug\ITYardService.exe.config
+C:\Users\Roman\Documents\c# courses\ITYardService\ITYardService\bin\Debug\ITYardService.exe
+C:\Users\Roman\Documents\c# courses\ITYardService\ITYardService\bin\Debug\ITYardService.pdb
+C:\Users\Roman\Documents\c# courses\ITYardService\ITYardService\obj\Debug\ITYardService.csprojAssemblyReference.cache
+C:\Users\Roman\Documents\c# courses\ITYardService\ITYardService\obj\Debug\ITYardService.csproj.CoreCompileInputs.cache
+C:\Users\Roman\Documents\c# courses\ITYardService\ITYardService\obj\Debug\ITYardService.exe
+C:\Users\Roman\Documents\c# courses\ITYardService\ITYardService\obj\Debug\ITYardService.pdb
